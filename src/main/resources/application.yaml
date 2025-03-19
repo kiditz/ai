@@ -6,7 +6,7 @@ spring:
       lifecycle-management: START_ONLY
   ai:
     openai:
-      api-key: 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
+      api-key:
       base-url: https://api.groq.com/openai
       chat:
         options:
