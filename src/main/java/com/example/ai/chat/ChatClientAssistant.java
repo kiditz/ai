@@ -1,14 +1,10 @@
 package com.example.ai.chat;
 
-import com.example.ai.LoggingAdvisor;
 import com.example.ai.booking.BookingTools;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor;
-import org.springframework.ai.chat.client.advisor.QuestionAnswerAdvisor;
 import org.springframework.ai.chat.memory.ChatMemory;
-import org.springframework.ai.vectorstore.SearchRequest;
 import org.springframework.ai.vectorstore.VectorStore;
-import org.springframework.ai.vectorstore.filter.FilterExpressionBuilder;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
@@ -39,10 +35,6 @@ class ChatClientAssistant {
 
 				.defaultAdvisors(
 						new PromptChatMemoryAdvisor(chatMemory)
-//						new QuestionAnswerAdvisor(vectorStore, SearchRequest.builder()
-//								.filterExpression("source == 'terms-of-service.txt'")
-//								.build()),
-//						new LoggingAdvisor()
 				)
 				.defaultTools(tools)
 				.build();
