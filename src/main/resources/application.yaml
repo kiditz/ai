@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: ai
+  docker:
+    compose:
+      lifecycle-management: START_ONLY
+  ai:
+    openai:
+      api-key: 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
+      base-url: https://api.groq.com/openai
+      chat:
+        options:
+          model: llama3-70b-8192
+    vectorstore:
+      pgvector:
+        initialize-schema: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mydatabase
+    username: myuser
+    password: secret
+  jpa:
+    hibernate:
+      ddl-auto: update
