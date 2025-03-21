@@ -30,6 +30,7 @@ class FlightBookingService {
 		booking.setBookingClass(request.bookingClass());
 		return bookingRepository.save(booking);
 	}
+
 	List<Booking> getBookings(){
 		return bookingRepository.findAll();
 	}
